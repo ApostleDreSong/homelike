@@ -62,7 +62,7 @@ mutation{
     SearchForApartments - this mutation takes in arguments, including substrings like city, countries. Where location is passed as argument, current searchers coordinates(latitude & longitude) are required to calculate the distance in Kilometers. This mutation returns an array of Apartments 
 ```graphql endpoint doc
 mutation{
-  searchForApartments(city: "lisb", country:"portu", rroms:5, latitude: 12.084589, longitude: 8.871791, distance: 900){
+  searchForApartments(city: "lisb", country:"portu", rooms:5, latitude: 12.084589, longitude: 8.871791, distance: 900){
     	id,
     city,
     country,
