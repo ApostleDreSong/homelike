@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node index.js",
-    "test": "mocha __tests__/*.test.js",
-    "document": "dociql -d config.yml"
+    "test": "mocha __tests__/*.test.js"
   },
   "repository": {
     "type": "git",
