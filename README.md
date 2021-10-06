@@ -8,14 +8,91 @@
 7. Use the graphql playground on http://localhost:4000/playground for queries and mutations. Detailed documentation, input types and return types can also be found on the playground
 # Documentation<br />
 ### Mutations
-    - register  - the get apartments mutation accepts registration details and returns the id alongside registration details
-    - authenticate - authenticate mutation accepts email, password and returns a token that expires every 30 minutes
-    - createApartment - createApartment mutation accepts location parameters including the coordinates(latitude & longitude) of the apartment and returns a sucess message and Apartment data. Latitude and Longitude are required to enable us calculate distance between two points
-    - markApartmentAsFavorite - markApartmentAsFavorite mutation takes in the apartmentId as argument and returns the Apartment details. apartmentId can be gotten from the query getApartments
-    - searchForApartments - this mutation takes in arguments, including substrings like city, countries. Where location is passed as argument, current searchers coordinates(latitude & longitude) are required to calculate the distance in Kilometers. This mutation returns an array of Apartments 
+     Register  - the get apartments mutation accepts registration details and returns the id alongside registration details
+
+``` graphql endpoint doc
+
+mutation {
+     register(firstName: "Lovely", lastName: "Human", email: "hr@homelike.com", password: "homelikePropTech") {
+        message
+        data {
+        id
+        firstName
+        lastName
+        email
+        }
+    }
+}
+```
+    Authenticate - authenticate mutation accepts email, password and returns a token that expires every 30 minutes
+```graphql endpoint doc
+
+    mutation {
+      authenticate(email: "hr@homelike.com", password: "homelikePropTech")
+    }
+```
+    CreateApartment - createApartment mutation accepts location parameters including the coordinates(latitude & longitude) of the apartment and returns a sucess message and Apartment data. Latitude and Longitude are required to enable us calculate distance between two points
+```graphql endpoint doc
+mutation {
+  createApartment(city: "Lisbon", country: "Portugal", rooms: 5, latitude: 6.590507, longitude: 3.362841) {
+    message
+    data {
+      id
+      city
+      country
+      latitude
+      longitude
+      creatorId
+    }
+  }
+}
+
+```
+    MarkApartmentAsFavorite - markApartmentAsFavorite mutation takes in the apartmentId as argument and returns the Apartment details. apartmentId can be gotten from the query getApartments
+```graphql endpoint doc
+mutation{
+  markApartmentAsFavorite(apartmentId: 7)
+}
+```
+    SearchForApartments - this mutation takes in arguments, including substrings like city, countries. Where location is passed as argument, current searchers coordinates(latitude & longitude) are required to calculate the distance in Kilometers. This mutation returns an array of Apartments 
+```graphql endpoint doc
+mutation{
+  searchForApartments(city: "lisb", country:"portu", rroms:5, latitude: 12.084589, longitude: 8.871791, distance: 900){
+    	id,
+    city,
+    country,
+    rooms
+  }
+}
+
+```
 ### Queries
-    - getApartments - the get apartments query returns an array of apartments
-    - getFavoriteApartments - the get favorites apartment returns the favorited apartments by the logged in user
+    GetApartments - the get apartments query returns an array of apartments
+```graphql endpoint doc
+query{
+  getApartments{
+    id,
+    city,
+    country,
+    rooms,
+    latitude,
+    longitude
+  }
+}
+```
+    GetFavoriteApartments - the get favorites apartment returns the favorited apartments by the logged in user
+```graphql endpoint doc
+query{
+  getFavoriteApartments{
+    id,
+    city,
+    country,
+    rooms,
+    latitude,
+    longitude
+  }
+}
+```
 
 
 # For Tests
