@@ -3,7 +3,7 @@
 2. cd into homelike
 3. Change config details for database in config/config.json
 4. run npm install
-5. Create a .env file and provide the needed options
+5. Create a .env file and provide the needed options - options to provide are included in .env.sample file at the root of the project
 6. use the command "npm start" to create an instance of the App.
 7. Use the graphql playground on http://localhost:4000/playground for queries and mutations. Detailed documentation, input types and return types can also be found on the playground
 # Documentation<br />
