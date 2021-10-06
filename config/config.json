@@ -9,7 +9,7 @@
   "test": {
     "username": "root",
     "password": "people@8624",
-    "database": "database_test",
+    "database": "homelike",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
