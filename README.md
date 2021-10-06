@@ -7,6 +7,10 @@
 6. use the command "npm start" to create an instance of the App.
 7. Use the graphql playground on http://localhost:4000/playground for queries and mutations. Detailed documentation, input types and return types can also be found on the playground
 # Documentation<br />
+To use the other endpoints apart from register or authenticate, pass the bearer token gotten from the authorize mutation as an authorization header.
+```graphql endpoint doc
+"Authorization: "Bearer tokenizedstringottenfromauthorizemutation"
+```
 ### Mutations
      Register  - the get apartments mutation accepts registration details and returns the id alongside registration details
 
