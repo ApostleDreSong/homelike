@@ -22,3 +22,7 @@
 use "npm run test" command
 
 The test focuses only on sanitizing and validating the graphql resolver inputs.
+
+# Enhanced Entity Relationship DIAGRAM
+
+![EER Diagram](eer/eer-diagram-homelike.png?raw=true)
