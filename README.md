@@ -8,7 +8,10 @@
 7. Use the graphql playground on http://localhost:4000/playground for queries and mutations. Detailed documentation, input types and return types can also be found on the playground
 # Documentation<br />
 To use the other endpoints apart from register or authenticate, pass the bearer token gotten from the authorize mutation as an authorization header.
-Click on the settings icon by the left of the playground to reveal options to add headers
+Click on the settings icon by the left of the playground to reveal options to add headers.
+
+Remember to append Bearer to it.
+
 ```graphql endpoint doc
 "Authorization: "Bearer tokenizedstringottenfromauthorizemutation"
 ```
