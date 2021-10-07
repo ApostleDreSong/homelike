@@ -10,7 +10,7 @@
 To use the other endpoints apart from register or authenticate, pass the bearer token gotten from the authorize mutation as an authorization header.
 Click on the settings icon by the left of the playground to reveal options to add headers.
 
-Rememeber to append Bearer to it.
+Remember to append Bearer to it.
 
 ```graphql endpoint doc
 "Authorization: "Bearer tokenizedstringottenfromauthorizemutation"
