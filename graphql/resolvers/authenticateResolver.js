@@ -21,9 +21,7 @@ module.exports = async (args) => {
         const isPasswordCorrect = await bcrypt.compare(password, user.password);
         if(isPasswordCorrect){
             try {
-                token = jwt.sign({id, firstName, lastName, email}, process.env.PRIVATE_KEY,{
-                    expiresIn: '1800000'
-                });
+                token = jwt.sign({id, firstName, lastName, email}, process.env.PRIVATE_KEY);
             } catch (e) {
                 throw new Error(e);
             }
